@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TDD Practice - Vue </title>
+    <link rel='stylesheet' href='https://redirector.gservice.emarsys.net/ui/latest/css/app.css'>
+  </head>
+  <body>
+  <script src='https://redirector.gservice.emarsys.net/ui/latest/js/app.js'></script>
+  <script>
+      if (!window.e) {
+          window.e = { utils: {} };
+      }
+
+      window.e.utils.getAuthenticationToken = async (serviceName) => { if (serviceName === 'coding-dojo') { return Promise.resolve('XXX'); } return Promise.reject('No such service'); }
+  </script>
+  <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

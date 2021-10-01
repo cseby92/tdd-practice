@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    container_name: tdd-practice-service
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    command:
+      - npm run test:hot
+    working_dir: /app
+    ports:
+      - 9111:9111
+
+  postgres:
+    container_name: tdd-practice-db
+    image: postgres:10-alpine3.14
+    environment:
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=development_secret
+      - POSTGRES_DB=postgres
